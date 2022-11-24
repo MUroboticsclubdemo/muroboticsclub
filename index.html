@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MU Robotics Club</title>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+body {
+  font-family: 'Oswald', sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: #E6E6DC;
+  overflox-x: hidden;
+}
+
+div.content {
+  width: 900px;
+  margin: 5px auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+div.content1 {
+  width: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+div.title {
+  font-family: 'Lobster', cursive;
+  width: 100%;
+  margin: 5 auto;
+  text-align: center;
+  font-size: 40px;
+  line-height:50px;
+  text-align:center;
+  text-shadow: 
+    0px 1px #000000,
+    0px 2px #EEEEEE,
+    0px 3px #000000,
+    0px 4px #222222,
+    0px 5px #C0C0C0,
+    0px 6px #000000,
+    0px 6px 10px rgba(1,1,1,0.25),
+    0px 6px 3px rgba(1,1,1,0.8);
+  color: #00fffff;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div.container {
+  position: relative;
+  display: inline-block;
+  left: -50%;
+}
+
+.space {
+  margin: 15px 0;
+}
+
+form {
+
+}
+
+button {
+  position: relative;
+  box-shadow: 
+    0px 1px #003e58,
+    0px 2px #003e58,
+    0px 3px #003e58,
+    0px 4px #003e58,
+    0px 5px #003e58,
+    0px 5px 10px rgba(1,1,1,0.25),
+    0px 5px 3px rgba(1,1,1,0.8);
+  background: #00628B;
+  color: #ffffff;
+  text-shadow: 0px -2px #003e58;
+  border: solid 1px #003e58;
+  border-radius: 2px;
+  outline: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  transition:top 0.1s, border-bottom 0.1s, box-shadow 0.1s;
+}
+
+button:hover {
+
+  outline: 0;
+  top: 2px;
+  box-shadow: 
+    0px 1px #003e58,
+    0px 2px #003e58,
+    0px 3px #003e58,
+    0px 4px #003e58,
+    0px 4px 5px rgba(1,1,1,0.25),
+    0px 4px 1px rgba(1,1,1,0.6);
+
+  transition:top 0.1s, border-bottom 0.1s, box-shadow 0.1s;
+}
+
+button:active {
+  outline: 0;
+  top: 4px;
+  box-shadow: 
+    0px 1px #003e58,
+    0px 1px 5px rgba(1,1,1,0.25);
+
+  transition:top 0.1s, border-bottom 0.1s, box-shadow 0.1s;
+}
+
+label {
+  text-align: center;
+  line-height: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  display: block;
+}
+
+input {
+  background: #E6E6DC;
+  color: #00628B;
+  outline: 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+  border: 0px;
+  border-bottom: solid 1px rgba(1,1,1,0.2);
+}
+
+textarea {
+  text-align: center;
+  background: #E6E6DC;
+  color: #00628B;
+  outline: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  border: 0px;
+  border-bottom: solid 1px rgba(1,1,1,0.2);
+  max-width: 80%;
+}
+
+input:focus, textarea:focus {
+  outline: 0;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  margin: 15px auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  display: block;
+}
+
+div.line {
+  margin: 5px 0px;
+  display: inline;
+}
+
+.nav {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+}
+
+.start {
+  border-radius: 5px 0 0 5px;
+}
+
+.mid {
+  border-radius: 1px;    
+}
+
+.end {
+  border-radius: 0 5px 5px 0;  
+}
+
+div.button1 {
+  position: relative;
+  color: #ffffff;
+  text-shadow: 0px -2px #003e58;
+  padding: 10px 25px;
+  font-size: 28px;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+  background: #003e58;
+  border: solid 1px #C0C0C0;
+  border-bottom: solid 10px #000000;
+  box-shadow: 0 2px 10px rgba(1, 1, 1, 0.25);
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  transition:top 0.1s, border-bottom 0.1s, box-shadow 0.1s;
+}
+
+div.button1:hover {
+  top: 4px; 
+  
+  border-bottom: solid 6px #003e58;
+  box-shadow: 0 1px 10px rgba(1, 1, 1, 0.25);
+  
+  transition:top 0.1s, border-bottom 0.1s, box-shadow 0.1s; 
+}
+
+div.button1:active {
+  top: 9px;
+  border-bottom: solid 1px #003e58;
+  box-shadow: 0 0px 0px rgba(1, 1, 1, 0.25);
+  
+  transition:top 0.1s, border-bottom 0.1s, box-shadow 0.1s; 
+}
+
+hr.style4 {
+  border-top: 1px dotted #8c8b8b;
+}
+
+hr.style7 {
+  border-top: 1px solid #8c8b8b;
+  border-bottom: 1px solid #fff;
+}
+
+
+@keyframes fade{
+  from{
+    opacity:0.4;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+#slider{
+  margin:0 auto;
+  width:80%;
+  overflow:hidden;
+}
+
+.slides{
+  overflow:hidden;
+  animation-name:fade;
+  animation-duration:1s;
+  display:none;
+}
+
+
+
+#dot{
+  margin:0 auto;
+  text-align:center;
+}
+.dot{
+  display:inline-block;
+  border-radius:50%;
+  background:#d3d3d3;
+  padding:8px;
+  margin:10px 5px;
+}
+
+.active{
+  background:black;
+}
+
+@media (max-width:567px){
+  #slider{
+    width:100%;
+
+  }
+}
+
+#heading{
+  display:block;
+  text-align:center;
+  font-size:2em;
+  margin:10px 0px;
+
+}
+
+</style>
+
+<script>
+window.addEventListener('load',checkJSLoaded)
+
+function checkJSLoaded(){
+var index = 0;
+var slides = document.querySelectorAll(".slides");
+var dot = document.querySelectorAll(".dot");
+
+function changeSlide(){
+
+  if(index<0){
+    index = slides.length-1;
+  }
+  
+  if(index>slides.length-1){
+    index = 0;
+  }
+  
+  for(let i=0;i<slides.length;i++){
+    slides[i].style.display = "none";
+    dot[i].classList.remove("active");
+  }
+  
+  slides[index].style.display= "block";
+  dot[index].classList.add("active");
+  
+  index++;
+  
+  setTimeout(changeSlide,2000);
+  
+}
+
+changeSlide();
+
+
+
+document.getElementById('home').addEventListener('click', function(e) {
+  document.getElementById('mainContent').style.display = 'block';
+  document.getElementById('portfolioContent').style.display = 'none';
+  document.getElementById('contactContent').style.display = 'none';
+  document.getElementById('otherContent').style.display = 'none';
+});
+
+document.getElementById('portfolio').addEventListener('click', function(e) {
+  document.getElementById('mainContent').style.display = 'none';
+  document.getElementById('portfolioContent').style.display = 'block';
+  document.getElementById('contactContent').style.display = 'none';
+  document.getElementById('otherContent').style.display = 'none';
+});
+
+document.getElementById('contact').addEventListener('click', function(e) {
+  document.getElementById('mainContent').style.display = 'none';
+  document.getElementById('portfolioContent').style.display = 'none';
+  document.getElementById('contactContent').style.display = 'block';
+  document.getElementById('otherContent').style.display = 'none';
+});
+
+document.getElementById('other').addEventListener('click', function(e) {
+  document.getElementById('mainContent').style.display = 'none';
+  document.getElementById('portfolioContent').style.display = 'none';
+  document.getElementById('contactContent').style.display = 'none';
+  document.getElementById('otherContent').style.display = 'block';
+});
+
+function sendMail() {
+  
+}
+
+};
+
+
+</script>
+</head>
+
+
+<body>
+
+     
+  <p align="center">
+  <img src="https://www.dropbox.com/s/pp6j2oucpx6x4ff/IMG-20221107-WA0000.jpg?dl=1" class="img-responsive center-block" width="510px" height="150px"></p>
+
+  <div class="nav">
+    <div class="container">
+      <div id="home" class="button1 line start">
+        Home
+      </div>
+      <div id="portfolio" class="button1 line mid">
+        Portfolio 
+      </div>
+      <div id="contact" class="button1 line mid">
+        Contact 
+      </div>
+      <div id="other" class="button1 line end">
+        Other 
+      </div>
+    </div>
+  </div>  
+  <div id="content" class="content">
+  <br>
+	<hr class="style7">
+	<div id="content1" class="content1">
+
+    <marquee>
+	
+	<p style="font-size:10px">MU ROBO FEST &nbsp&nbsp2.0</p>
+	
+	</marquee>
+	
+  </div>
+	<hr class="style7">
+	
+    <div id="mainContent" style="display: block;">
+      <p>Our mission is to build a progressive platform for Robotics enthusiasts by active participation in research, training and contest. We do it by organizing various programs, workshops and competitions that help us create connections among students, teachers and employers.
+	  <br>
+	 <span id="heading">HALL OF FAME</span>
+  <br>
+  <br>
+<div id="slider">  
+<div class="slides">  
+  <img src="https://hhsbanner.com/wp-content/uploads/2019/03/victoria_falls-900x300.jpg" width="100%" />
+ </div>
+  
+  <div class="slides">  
+  <img src="https://blog.cognifit.com/wp-content/uploads/2019/11/hiking-900x300.jpg" width="100%" />
+</div>
+  
+  <div class="slides">  
+  <img src="https://travelfree.info/wp-content/uploads/2018/02/croatia-waterfall-in-deep-forest-of-Cr-12755165-900x300.jpg" width="100%" />
+</div> 
+  
+   <div class="slides">  
+  <img src="https://www.piemonturismo.it/site/wp-content/uploads/2014/07/13-laghi-grande.jpg" width="100%" />
+</div> 
+  
+<div class="slides">  
+  <img src="https://improvephotography.com/wp-content/uploads/2017/09/Julian-Baird-20170914-3-900px.jpg" width="100%" />
+</div>  
+  
+  <div id="dot"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+ </div>
+	
+
+	  </p>
+    </div>
+    <div id="portfolioContent" style="display: block;">
+      <p>
+	  <h1>Objectives</h1>
+	   <p align="center">
+  <img src="https://www.dropbox.com/s/pp6j2oucpx6x4ff/IMG-20221107-WA0000.jpg?dl=1" class="img-responsive center-block" width="510px" height="150px"></p>
+
+
+<ul>
+  <li>To build an interactive and supportive platform of Embedded Systems, Robotics and Information Technology integrating students, faculty and corporate individuals.</li>
+  <li>To foster interest in robotics through training and contests.</li>
+  <li>To create motivation for research on Embedded Systems, Robotics and Information Technology.</li>
+  <li>To represent UIU on national and global grounds by organizing and participating in various competitions, research endeavors and innovations relevant to the fields of Embedded Systems, Robotics and Information Technology.</li>
+  <li>To cultivate favorable relationships with proximate communities.</li>
+</ul>
+	  </p>
+    </div>
+	<br>
+ <hr>
+    <div id="otherContent" style="display: block;">
+      <p>
+	  <h1>Services</h1>
+	   <p align="center">
+  <img src="https://www.dropbox.com/s/pp6j2oucpx6x4ff/IMG-20221107-WA0000.jpg?dl=1" class="img-responsive center-block" width="510px" height="150px"></p>
+
+
+<ul>
+  <li>Provide long-term and short-term workshops and training programs.</li>
+  <li>Organize and participate in intra and inter level competitions on both national and international grounds.</li>
+  <li>Conduct research projects related to Embedded Systems, Robotics and Information Technology under a Faculty(s) of the University.</li>
+  <li>Organize seminars and outreach program both in own campus and other institutions to promote Embedded Systems, Robotics and Information Technology.</li>
+  <li>Provide mentorship for student projects with approval from the Mentor(s).</li>
+  <li>Provide recommendations for employment inside and outside the University.</li>
+  <li>Provide organizational support to the University when requested.</li>
+</ul>
+	  </p>
+    </div>
+	
+<br>
+	<hr class="style4">
+<br>
+	   <div id="contactContent" style="display: block;">
+      <form>
+        <div class="space"><input type="text" id="formName" placeholder="Name" required></div>
+        <div class="space"><input type="email" id="formEmail" placeholder="Email" required></div>
+        <div class="space"><textarea type="text" id="formText" placeholder="Reason For Contacting" required></textarea></div>
+        <button id="submit" onclick="sendMail();">Submit</button>
+      </form>
+    </div>
+	
+  </div>
+</body>
+</html>
